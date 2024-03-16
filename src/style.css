@@ -54,7 +54,7 @@ body {
 
 .login {
     margin: 0px;
-    border-radius: 0.25em;
+    border-radius: 0.35em;
     padding: 10px;
     user-select: none;
     display: flex;

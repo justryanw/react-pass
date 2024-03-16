@@ -3,11 +3,18 @@ import './style.css';
 import addIcon from './assets/add.svg';
 import trashIcon from './assets/trash.svg';
 import googleIcon from './assets/google.ico';
+import facebookIcon from './assets/facebook.ico';
 
-
+interface Login {
+  id: string,
+  title: string,
+  username: string,
+  password: string,
+  url: string,
+}
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [logins, setLogins] = useState([] as Login[]);
 
   return (
     <>
@@ -24,6 +31,13 @@ function App() {
           <img className='favicon' src={googleIcon}></img>
           <div>
             <div className="title">Google</div>
+            <div className="username">someone@gmail.com</div>
+          </div>
+        </li>
+        <li className='login'>
+          <img className='favicon' src={facebookIcon}></img>
+          <div>
+            <div className="title">Facebook</div>
             <div className="username">someone@gmail.com</div>
           </div>
         </li>
