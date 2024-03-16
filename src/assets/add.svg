@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="16"
+   height="16"
+   id="svg7384"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   sodipodi:docname="core.svg"
+   viewBox="0 0 16 16"
+   shape-rendering="crispEdges"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata90">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Gnome Symbolic Icon Theme</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#f4f5f6"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:window-width="3440"
+     inkscape:window-height="1371"
+     id="namedview88"
+     showgrid="false"
+     inkscape:zoom="4"
+     inkscape:cx="303"
+     inkscape:cy="224.875"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer12"
+     showborder="false"
+     inkscape:snap-nodes="true"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-to-guides="true"
+     inkscape:snap-grids="true"
+     inkscape:snap-global="true"
+     inkscape:object-nodes="true"
+     inkscape:snap-bbox-midpoints="false"
+     inkscape:object-paths="true"
+     inkscape:snap-others="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:measure-start="56,310.597"
+     inkscape:measure-end="0,0"
+     inkscape:document-rotation="0"
+     inkscape:snap-intersection-paths="true"
+     inkscape:pagecheckerboard="false"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-page="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-center="true"
+     inkscape:snap-text-baseline="true"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#f4f5f6">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4866"
+       empspacing="4"
+       visible="false"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       spacingx="1px"
+       spacingy="1px"
+       color="#8e8eb0"
+       opacity="0.29411765"
+       empcolor="#3f3fff"
+       empopacity="0.45882353"
+       originx="-160.00014"
+       originy="-282"
+       units="px" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid25939"
+       empspacing="4"
+       spacingy="0.5"
+       spacingx="0.5"
+       dotted="false"
+       originx="-160.00014"
+       originy="-282"
+       units="px"
+       visible="false" />
+  </sodipodi:namedview>
+  <title
+     id="title9167">Gnome Symbolic Icon Theme</title>
+  <defs
+     id="defs7386" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer12"
+     inkscape:label="actions"
+     transform="translate(-160.00014,-82)">
+    <g
+       id="g4411"
+       transform="matrix(0,1,1,0,-567.99987,-168)"
+       inkscape:label="document new create add page empty">
+      <title
+         id="title41533">document-new</title>
+      <path
+         id="path4405"
+         style="fill:#fff"
+         d="m 224,260 c -1.6447,0 -3,1.3553 -3,3 v 10 c 0,1.6447 1.3553,3 3,3 h 3 c 0.55228,0 1,-0.44772 1,-1 0,-0.55228 -0.44772,-1 -1,-1 h -3 c -0.5713,0 -1,-0.4287 -1,-1 v -10 c 0,-0.5713 0.4287,-1 1,-1 h 5.58594 L 233,265.41406 V 266 c 0,0.55228 0.44772,1 1,1 0.55228,0 1,-0.44772 1,-1 v -1 c -5e-5,-0.2652 -0.10543,-0.51952 -0.29297,-0.70703 l -4,-4 C 230.51952,260.10543 230.2652,260.00005 230,260 Z m 7,8 v 1 2 h -2 -1 v 2 h 1 2 v 2 1 h 2 v -1 -2 h 2 1 v -2 h -1 -2 v -2 -1 z"
+         transform="matrix(0,1,1,0,-10,507.99987)" />
+      <rect
+         transform="scale(-1,1)"
+         id="rect4403"
+         y="728"
+         x="-266"
+         height="16"
+         width="16"
+         style="fill:none" />
+    </g>
+  </g>
+</svg>

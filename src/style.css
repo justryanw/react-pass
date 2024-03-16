@@ -14,21 +14,21 @@ body {
     display: flex;
     justify-content: left;
     background: #303030;
-    box-shadow: 0px 5px 10px #181818;
+    box-shadow: 0px 2px 4px #181818;
 }
 
 .btn {
-    margin: 15px;
-    height: 80px;
-    width: 80px;
-    border-radius: 0.5em;
+    margin: 10px;
+    height: 48px;
+    width: 48px;
+    border-radius: 0.25em;
     display: flex;
     justify-content: center;
     align-items: center;
     /* outline: solid; */
     font-weight: bold;
     user-select: none;
-    box-shadow: 4px 4px 20px #181818;
+    /* box-shadow: 4px 4px 20px #181818; */
 }
 
 .btn:hover {
@@ -39,4 +39,9 @@ body {
 .btn:active {
     background-color: #444444;
     transition: background-color 0.2s;
+}
+
+img {
+    width: 50%;
+    height: 50%;
 }
