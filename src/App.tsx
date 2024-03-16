@@ -3,8 +3,6 @@ import './style.css';
 import addIcon from './assets/add.svg';
 import trashIcon from './assets/trash.svg';
 import { Login, LoginItem } from './LoginItem';
-import googleIcon from './assets/google.ico';
-import facebookIcon from './assets/facebook.ico';
 
 
 export default function App() {
@@ -13,17 +11,22 @@ export default function App() {
       id: crypto.randomUUID(),
       title: "Google",
       username: "someone@gmail.com",
-      icon: googleIcon
+      url: "https://google.com"
     }, {
       id: crypto.randomUUID(),
       title: "Facebook",
       username: "someone@gmail.com",
-      icon: facebookIcon
+      url: "https://facebook.com"
     }, {
       id: crypto.randomUUID(),
-      title: "Facebook",
+      title: "Youtube",
       username: "someone@gmail.com",
-      icon: facebookIcon
+      url: "https://youtube.com"
+    }, {
+      id: crypto.randomUUID(),
+      title: "Discord",
+      username: "someone@gmail.com",
+      url: "https://discord.com"
     }
   ] as Login[]);
 
