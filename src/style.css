@@ -129,6 +129,8 @@ div#root {
     background-color: #303030;
     transition: 0.05s;
     outline: 0px solid #4D6887;
+    box-shadow: 4px 4px 10px #181818;
+    cursor: text;
 }
 
 .login-detail.top {
@@ -143,8 +145,18 @@ div#root {
     outline: 3px solid #4D6887;
 }
 
+.login-detail-label {
+    background-color: #fff;
+}
+
 .login-title {
     color: gray;
     font-size: 25px;
 }
 
+.login-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+}
