@@ -34,6 +34,66 @@ export default function App() {
       title: "LinkedIn",
       username: "someone@gmail.com",
       url: "https://linkedin.com"
+    }, {
+      id: crypto.randomUUID(),
+      title: "Facebook",
+      username: "someone@gmail.com",
+      url: "https://facebook.com"
+    }, {
+      id: crypto.randomUUID(),
+      title: "Youtube",
+      username: "someone@gmail.com",
+      url: "https://youtube.com"
+    }, {
+      id: crypto.randomUUID(),
+      title: "Discord",
+      username: "someone@gmail.com",
+      url: "https://discord.com"
+    }, {
+      id: crypto.randomUUID(),
+      title: "LinkedIn",
+      username: "someone@gmail.com",
+      url: "https://linkedin.com"
+    }, {
+      id: crypto.randomUUID(),
+      title: "Facebook",
+      username: "someone@gmail.com",
+      url: "https://facebook.com"
+    }, {
+      id: crypto.randomUUID(),
+      title: "Youtube",
+      username: "someone@gmail.com",
+      url: "https://youtube.com"
+    }, {
+      id: crypto.randomUUID(),
+      title: "Discord",
+      username: "someone@gmail.com",
+      url: "https://discord.com"
+    }, {
+      id: crypto.randomUUID(),
+      title: "LinkedIn",
+      username: "someone@gmail.com",
+      url: "https://linkedin.com"
+    }, {
+      id: crypto.randomUUID(),
+      title: "Facebook",
+      username: "someone@gmail.com",
+      url: "https://facebook.com"
+    }, {
+      id: crypto.randomUUID(),
+      title: "Youtube",
+      username: "someone@gmail.com",
+      url: "https://youtube.com"
+    }, {
+      id: crypto.randomUUID(),
+      title: "Discord",
+      username: "someone@gmail.com",
+      url: "https://discord.com"
+    }, {
+      id: crypto.randomUUID(),
+      title: "LinkedIn",
+      username: "someone@gmail.com",
+      url: "https://linkedin.com"
     }
   ] as Login[]);
 
@@ -57,12 +117,20 @@ export default function App() {
           <img src={trashIcon} alt="Delete" className='icon' />
         </div>
       </div>
-      <ul className='list'>
-        {logins.map(login => {
-          const selected = selectedLogin ? selectedLogin.id === login.id : false;
-          return <LoginItem login={login} key={login.id} selectLogin={selectLogin} selected={selected} />
-        })}
-      </ul>
+      <div className='main-content'>
+        <div className='list-wrapper'>
+          <ul className='list'>
+            {logins.map(login => {
+              const selected = selectedLogin ? selectedLogin.id === login.id : false;
+              return <LoginItem login={login} key={login.id} selectLogin={selectLogin} selected={selected} />
+            })}
+          </ul>
+        </div>
+        <div className='seperator'>
+        </div>
+        <div className='details'>
+        </div>
+      </div>
     </>
   );
 }
