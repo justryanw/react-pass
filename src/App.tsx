@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './style.css';
 import addIcon from './assets/add.svg';
 import trashIcon from './assets/trash.svg';
 import { Login, LoginItem } from './LoginItem';
 
+export type DeleteLogin = (id: string) => void;
+export type SelectLogin = (id: string) => void;
 
 export default function App() {
   const [logins, setLogins] = useState([
@@ -27,8 +29,23 @@ export default function App() {
       title: "Discord",
       username: "someone@gmail.com",
       url: "https://discord.com"
+    }, {
+      id: crypto.randomUUID(),
+      title: "LinkedIn",
+      username: "someone@gmail.com",
+      url: "https://linkedin.com"
     }
   ] as Login[]);
+
+  const [selectedLogin, setSelectedLogin] = useState(logins[0] as Login | undefined);
+
+  let deleteLogin: DeleteLogin = (id) => {
+    setLogins((currentLogins) => currentLogins.filter(login => login.id !== id));
+  }
+
+  let selectLogin: SelectLogin = (id) => {
+    setSelectedLogin(() => logins.find(login => login.id === id));
+  }
 
   return (
     <>
@@ -42,7 +59,8 @@ export default function App() {
       </div>
       <ul className='list'>
         {logins.map(login => {
-          return <LoginItem login={login} key={login.id} />
+          const selected = selectedLogin ? selectedLogin.id === login.id : false;
+          return <LoginItem login={login} key={login.id} selectLogin={selectLogin} selected={selected} />
         })}
       </ul>
     </>
