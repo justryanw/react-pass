@@ -1,4 +1,4 @@
-import LoginDetail, { BorderType } from "./LoginDetail";
+import LoginEntry, { BorderType } from "./LoginEntry";
 import { Login } from "./LoginItem";
 
 interface ILoginDetails {
@@ -10,11 +10,11 @@ export function LoginDetails({ login }: ILoginDetails) {
     const { title, username, password, url } = login;
 
     return (
-        <form className="login-details">
-            <LoginDetail name={"Title"} value={title} endType={BorderType.Top} />
-            <LoginDetail name={"Username"} value={username} endType={BorderType.Middle} />
-            <LoginDetail name={"Password"} value={password} endType={BorderType.Middle} />
-            <LoginDetail name={"Url"} value={url} endType={BorderType.Bottom} />
+        <form key={login.id} className="login-details">
+            <LoginEntry name={"Title"} value={title} endType={BorderType.Top} />
+            <LoginEntry name={"Username"} value={username} endType={BorderType.Middle} />
+            <LoginEntry name={"Password"} value={password} endType={BorderType.Middle} />
+            <LoginEntry name={"Url"} value={url} endType={BorderType.Bottom} />
         </form>
     );
 }
