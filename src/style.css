@@ -73,6 +73,7 @@ div#root {
     list-style: none;
     padding: 5px;
     margin: 5px;
+    padding-right: 15px;
     width: 500px;
 }
 
