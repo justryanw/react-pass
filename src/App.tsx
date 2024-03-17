@@ -2,103 +2,143 @@ import { useState } from 'react';
 import './style.css';
 import addIcon from './assets/add.svg';
 import trashIcon from './assets/trash.svg';
-import { Login, LoginItem } from './LoginItem';
+import { LoginItem } from './LoginItem';
 import { LoginDetails } from './LoginDetails';
 
 export type DeleteLogin = (id: string) => void;
 export type SelectLogin = (id: string) => void;
 
+export interface Login {
+  id: string,
+  fields: Map<string, string>
+}
+
 export default function App() {
-  const [logins, setLogins] = useState([
+  const [logins, setLogins] = useState<Login[]>([
     {
       id: crypto.randomUUID(),
-      title: "Google",
-      username: "someone@gmail.com",
-      url: "https://google.com"
+      fields: new Map<string, string>([
+        ["Title", "Google"],
+        ["Username", "someone@gmail.com"],
+        ["Password", ""],
+        ["Url", "https://google.com"],
+      ])
     }, {
       id: crypto.randomUUID(),
-      title: "Facebook",
-      username: "someone@gmail.com",
-      url: "https://facebook.com"
+      fields: new Map<string, string>([
+        ["Title", "Facebook"],
+        ["Username", "someone@gmail.com"],
+        ["Password", ""],
+        ["Url", "https://facebook.com"],
+      ])
     }, {
       id: crypto.randomUUID(),
-      title: "Youtube",
-      username: "someone@gmail.com",
-      url: "https://youtube.com"
+      fields: new Map<string, string>([
+        ["Title", "Discord"],
+        ["Username", "someone@gmail.com"],
+        ["Password", ""],
+        ["Url", "https://discord.com"],
+      ])
     }, {
       id: crypto.randomUUID(),
-      title: "Discord",
-      username: "someone@gmail.com",
-      url: "https://discord.com"
+      fields: new Map<string, string>([
+        ["Title", "Google"],
+        ["Username", "someone@gmail.com"],
+        ["Password", ""],
+        ["Url", "https://google.com"],
+      ])
     }, {
       id: crypto.randomUUID(),
-      title: "LinkedIn",
-      username: "someone@gmail.com",
-      url: "https://linkedin.com"
+      fields: new Map<string, string>([
+        ["Title", "Google"],
+        ["Username", "someone@gmail.com"],
+        ["Password", ""],
+        ["Url", "https://google.com"],
+      ])
     }, {
       id: crypto.randomUUID(),
-      title: "Facebook",
-      username: "someone@gmail.com",
-      url: "https://facebook.com"
+      fields: new Map<string, string>([
+        ["Title", "Google"],
+        ["Username", "someone@gmail.com"],
+        ["Password", ""],
+        ["Url", "https://google.com"],
+      ])
     }, {
       id: crypto.randomUUID(),
-      title: "Youtube",
-      username: "someone@gmail.com",
-      url: "https://youtube.com"
+      fields: new Map<string, string>([
+        ["Title", "Facebook"],
+        ["Username", "someone@gmail.com"],
+        ["Password", ""],
+        ["Url", "https://facebook.com"],
+      ])
     }, {
       id: crypto.randomUUID(),
-      title: "Discord",
-      username: "someone@gmail.com",
-      url: "https://discord.com"
+      fields: new Map<string, string>([
+        ["Title", "Discord"],
+        ["Username", "someone@gmail.com"],
+        ["Password", ""],
+        ["Url", "https://discord.com"],
+      ])
     }, {
       id: crypto.randomUUID(),
-      title: "LinkedIn",
-      username: "someone@gmail.com",
-      url: "https://linkedin.com"
+      fields: new Map<string, string>([
+        ["Title", "Google"],
+        ["Username", "someone@gmail.com"],
+        ["Password", ""],
+        ["Url", "https://google.com"],
+      ])
     }, {
       id: crypto.randomUUID(),
-      title: "Facebook",
-      username: "someone@gmail.com",
-      url: "https://facebook.com"
+      fields: new Map<string, string>([
+        ["Title", "Google"],
+        ["Username", "someone@gmail.com"],
+        ["Password", ""],
+        ["Url", "https://google.com"],
+      ])
+    },{
+      id: crypto.randomUUID(),
+      fields: new Map<string, string>([
+        ["Title", "Google"],
+        ["Username", "someone@gmail.com"],
+        ["Password", ""],
+        ["Url", "https://google.com"],
+      ])
     }, {
       id: crypto.randomUUID(),
-      title: "Youtube",
-      username: "someone@gmail.com",
-      url: "https://youtube.com"
+      fields: new Map<string, string>([
+        ["Title", "Facebook"],
+        ["Username", "someone@gmail.com"],
+        ["Password", ""],
+        ["Url", "https://facebook.com"],
+      ])
     }, {
       id: crypto.randomUUID(),
-      title: "Discord",
-      username: "someone@gmail.com",
-      url: "https://discord.com"
+      fields: new Map<string, string>([
+        ["Title", "Discord"],
+        ["Username", "someone@gmail.com"],
+        ["Password", ""],
+        ["Url", "https://discord.com"],
+      ])
     }, {
       id: crypto.randomUUID(),
-      title: "LinkedIn",
-      username: "someone@gmail.com",
-      url: "https://linkedin.com"
+      fields: new Map<string, string>([
+        ["Title", "Google"],
+        ["Username", "someone@gmail.com"],
+        ["Password", ""],
+        ["Url", "https://google.com"],
+      ])
     }, {
       id: crypto.randomUUID(),
-      title: "Facebook",
-      username: "someone@gmail.com",
-      url: "https://facebook.com"
-    }, {
-      id: crypto.randomUUID(),
-      title: "Youtube",
-      username: "someone@gmail.com",
-      url: "https://youtube.com"
-    }, {
-      id: crypto.randomUUID(),
-      title: "Discord",
-      username: "someone@gmail.com",
-      url: "https://discord.com"
-    }, {
-      id: crypto.randomUUID(),
-      title: "LinkedIn",
-      username: "someone@gmail.com",
-      url: "https://linkedin.com"
-    }
-  ] as Login[]);
+      fields: new Map<string, string>([
+        ["Title", "Google"],
+        ["Username", "someone@gmail.com"],
+        ["Password", ""],
+        ["Url", "https://google.com"],
+      ])
+    },
+  ]);
 
-  const [selectedLogin, setSelectedLogin] = useState(logins[0] as Login | undefined);
+  const [selectedLogin, setSelectedLogin] = useState<Login | undefined>(logins[0]);
 
   let deleteLogin: DeleteLogin = (id) => {
     setLogins((currentLogins) => currentLogins.filter(login => login.id !== id));
@@ -130,7 +170,7 @@ export default function App() {
         </div>
         <div className='seperator'>
         </div>
-        <LoginDetails login={selectedLogin} />
+        {selectedLogin ? <LoginDetails login={selectedLogin} /> : "no login selected"}
       </div>
     </>
   );

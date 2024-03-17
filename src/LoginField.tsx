@@ -12,10 +12,7 @@ interface ILoginDetail {
     endType: BorderType
 }
 
-export default function LoginEntry({ name, value, endType }: ILoginDetail) {
-    const [entryValue, setEntryValue] = useState(value || "");
-
-
+export function LoginField({ name, value, endType }: ILoginDetail) {
     const inputRef = useRef<HTMLInputElement>(null);
 
     return (
@@ -23,8 +20,8 @@ export default function LoginEntry({ name, value, endType }: ILoginDetail) {
             <div className="login-title">{name}</div>
             <input
                 className="login-input"
-                value={entryValue}
-                onChange={e => setEntryValue(e.target.value)}
+                value={value}
+                // onChange={e => setEntryValue(e.target.value)}
                 type="text"
                 ref={inputRef}
             />
