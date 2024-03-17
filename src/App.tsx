@@ -72,9 +72,8 @@ export default function App() {
             })}
           </ul>
         </div>
-        <div className='seperator'>
-        </div>
-        {selectedLogin ? <LoginDetails login={selectedLogin} /> : "no login selected"}
+        <div className='seperator' />
+        {selectedLogin ? <LoginDetails login={selectedLogin} key={selectedLogin.id} /> : "no login selected"}
       </div>
     </>
   );
