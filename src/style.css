@@ -152,6 +152,7 @@ div#root {
 .login-title {
     color: gray;
     font-size: 25px;
+    user-select: none;
 }
 
 .login-input {

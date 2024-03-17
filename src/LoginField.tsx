@@ -9,19 +9,21 @@ export enum BorderType {
 interface ILoginDetail {
     name: string,
     value: string,
-    endType: BorderType
+    borderType: BorderType
 }
 
-export function LoginField({ name, value, endType }: ILoginDetail) {
+export function LoginField({ name, value, borderType }: ILoginDetail) {
+    const [newValue, setNewValue] = useState(value);
+
     const inputRef = useRef<HTMLInputElement>(null);
 
     return (
-        <div className={`login-detail ${endType}`} onClick={() => inputRef.current?.focus()}>
+        <div className={`login-detail ${borderType}`} onClick={() => inputRef.current?.focus()}>
             <div className="login-title">{name}</div>
             <input
                 className="login-input"
-                value={value}
-                // onChange={e => setEntryValue(e.target.value)}
+                value={newValue}
+                onChange={e => setNewValue(e.target.value)}
                 type="text"
                 ref={inputRef}
             />

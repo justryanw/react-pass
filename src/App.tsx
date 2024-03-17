@@ -34,108 +34,12 @@ export default function App() {
     }, {
       id: crypto.randomUUID(),
       fields: new Map<string, string>([
-        ["Title", "Discord"],
+        ["Title", "Amazon"],
         ["Username", "someone@gmail.com"],
         ["Password", ""],
-        ["Url", "https://discord.com"],
+        ["Url", "https://amazon.com"],
       ])
-    }, {
-      id: crypto.randomUUID(),
-      fields: new Map<string, string>([
-        ["Title", "Google"],
-        ["Username", "someone@gmail.com"],
-        ["Password", ""],
-        ["Url", "https://google.com"],
-      ])
-    }, {
-      id: crypto.randomUUID(),
-      fields: new Map<string, string>([
-        ["Title", "Google"],
-        ["Username", "someone@gmail.com"],
-        ["Password", ""],
-        ["Url", "https://google.com"],
-      ])
-    }, {
-      id: crypto.randomUUID(),
-      fields: new Map<string, string>([
-        ["Title", "Google"],
-        ["Username", "someone@gmail.com"],
-        ["Password", ""],
-        ["Url", "https://google.com"],
-      ])
-    }, {
-      id: crypto.randomUUID(),
-      fields: new Map<string, string>([
-        ["Title", "Facebook"],
-        ["Username", "someone@gmail.com"],
-        ["Password", ""],
-        ["Url", "https://facebook.com"],
-      ])
-    }, {
-      id: crypto.randomUUID(),
-      fields: new Map<string, string>([
-        ["Title", "Discord"],
-        ["Username", "someone@gmail.com"],
-        ["Password", ""],
-        ["Url", "https://discord.com"],
-      ])
-    }, {
-      id: crypto.randomUUID(),
-      fields: new Map<string, string>([
-        ["Title", "Google"],
-        ["Username", "someone@gmail.com"],
-        ["Password", ""],
-        ["Url", "https://google.com"],
-      ])
-    }, {
-      id: crypto.randomUUID(),
-      fields: new Map<string, string>([
-        ["Title", "Google"],
-        ["Username", "someone@gmail.com"],
-        ["Password", ""],
-        ["Url", "https://google.com"],
-      ])
-    },{
-      id: crypto.randomUUID(),
-      fields: new Map<string, string>([
-        ["Title", "Google"],
-        ["Username", "someone@gmail.com"],
-        ["Password", ""],
-        ["Url", "https://google.com"],
-      ])
-    }, {
-      id: crypto.randomUUID(),
-      fields: new Map<string, string>([
-        ["Title", "Facebook"],
-        ["Username", "someone@gmail.com"],
-        ["Password", ""],
-        ["Url", "https://facebook.com"],
-      ])
-    }, {
-      id: crypto.randomUUID(),
-      fields: new Map<string, string>([
-        ["Title", "Discord"],
-        ["Username", "someone@gmail.com"],
-        ["Password", ""],
-        ["Url", "https://discord.com"],
-      ])
-    }, {
-      id: crypto.randomUUID(),
-      fields: new Map<string, string>([
-        ["Title", "Google"],
-        ["Username", "someone@gmail.com"],
-        ["Password", ""],
-        ["Url", "https://google.com"],
-      ])
-    }, {
-      id: crypto.randomUUID(),
-      fields: new Map<string, string>([
-        ["Title", "Google"],
-        ["Username", "someone@gmail.com"],
-        ["Password", ""],
-        ["Url", "https://google.com"],
-      ])
-    },
+    }
   ]);
 
   const [selectedLogin, setSelectedLogin] = useState<Login | undefined>(logins[0]);

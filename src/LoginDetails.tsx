@@ -6,14 +6,18 @@ interface ILoginDetails {
 }
 
 export function LoginDetails({ login }: ILoginDetails) {
+    const handleSubmit = () => {
+
+    };
 
     return (
-        <form key={login.id} className="login-details">
+        <form onSubmit={handleSubmit} key={login.id} className="login-details">
             {Array.from(login.fields.entries()).map(([key, value], index, arr) => {
                 return <LoginField
+                    key={key}
                     name={key}
                     value={value}
-                    endType={index === 0 ? BorderType.Top : index === arr.length - 1 ? BorderType.Bottom : BorderType.Middle}
+                    borderType={index === 0 ? BorderType.Top : index === arr.length - 1 ? BorderType.Bottom : BorderType.Middle}
                 />
             })}
         </form>
