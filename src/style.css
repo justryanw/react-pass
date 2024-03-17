@@ -119,3 +119,32 @@ div#root {
     background-color: dimgray;
     width: 2px;
 }
+
+.login-details {
+    margin: 20px auto;
+}
+
+.login-detail {
+    padding: 20px;
+    background-color: #303030;
+    transition: 0.05s;
+    outline: 0px solid #4D6887;
+}
+
+.login-detail.top {
+    border-radius: 0.5em 0.5em 0 0;
+}
+
+.login-detail.bottom {
+    border-radius: 0 0 0.5em 0.5em;
+}
+
+.login-detail:hover {
+    outline: 3px solid #4D6887;
+}
+
+.login-title {
+    color: gray;
+    font-size: 25px;
+}
+

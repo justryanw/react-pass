@@ -101,13 +101,11 @@ export default function App() {
   const [selectedLogin, setSelectedLogin] = useState(logins[0] as Login | undefined);
 
   let deleteLogin: DeleteLogin = (id) => {
-    console.log("delete login ", id)
     setLogins((currentLogins) => currentLogins.filter(login => login.id !== id));
     setSelectedLogin(() => undefined);
   }
 
   let selectLogin: SelectLogin = (id) => {
-    console.log("select login ", id)
     setSelectedLogin(() => logins.find(login => login.id === id));
   }
 
