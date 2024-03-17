@@ -1,6 +1,6 @@
 import { LoginField, BorderType } from "./LoginField";
 import { Login, OnSubmit } from "./App";
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 
 interface ILoginDetails {
   login: Login,
