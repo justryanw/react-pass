@@ -24,29 +24,28 @@ export function LoginDetails({ login, onSubmit }: ILoginDetails) {
     });
   }
 
-  const handleSubmit = (e: FormEvent) => {
-    console.log("submit");
-    e.preventDefault();
-
-
+  const handleSubmit = () => {
     onSubmit(newLogin);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="login-details">
-      {
-        Object.entries(newLogin.fields).map(([key, value], index, arr) => {
-          if (typeof value === 'string') {
-            return <LoginField
-              key={key}
-              name={key}
-              value={value}
-              borderType={index === 0 ? BorderType.Top : index === arr.length - 1 ? BorderType.Bottom : BorderType.Middle}
-              onChange={onChange}
-            />
-          }
-        })
-      }
-    </form>
+    <div className="login-details-page">
+      <form className="login-details">
+        {
+          Object.entries(newLogin.fields).map(([key, value], index, arr) => {
+            if (typeof value === 'string') {
+              return <LoginField
+                key={key}
+                name={key}
+                value={value}
+                borderType={index === 0 ? BorderType.Top : index === arr.length - 1 ? BorderType.Bottom : BorderType.Middle}
+                onChange={onChange}
+              />
+            }
+          })
+        }
+      </form>
+      <div className="save-button" onClick={handleSubmit}>Save</div>
+    </div>
   );
 }

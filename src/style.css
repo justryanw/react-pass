@@ -85,6 +85,7 @@ div#root {
     display: flex;
     transition: 0.2s;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .login:hover {
@@ -162,6 +163,19 @@ div#root {
     color: #fff;
 }
 
+.login-details-page {
+    margin: 0 auto;
+}
+
 .empty-page {
     margin: auto;
+}
+
+.save-button {
+    background-color: #2661a5;
+    padding: 10px;
+    border-radius: 0.5em;
+    margin: 0 auto;
+    user-select: none;
+    cursor: pointer;
 }
