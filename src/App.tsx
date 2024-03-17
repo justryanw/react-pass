@@ -3,12 +3,13 @@ import './style.css';
 import addIcon from './assets/add.svg';
 import trashIcon from './assets/trash.svg';
 import { Login, LoginItem } from './LoginItem';
+import { LoginDetails } from './LoginDetails';
 
 export type DeleteLogin = (id: string) => void;
 export type SelectLogin = (id: string) => void;
 
 export default function App() {
-  const [logins] = useState([
+  const [logins, setLogins] = useState([
     {
       id: crypto.randomUUID(),
       title: "Google",
@@ -99,11 +100,14 @@ export default function App() {
 
   const [selectedLogin, setSelectedLogin] = useState(logins[0] as Login | undefined);
 
-  // let deleteLogin: DeleteLogin = (id) => {
-  //   setLogins((currentLogins) => currentLogins.filter(login => login.id !== id));
-  // }
+  let deleteLogin: DeleteLogin = (id) => {
+    console.log("delete login ", id)
+    setLogins((currentLogins) => currentLogins.filter(login => login.id !== id));
+    setSelectedLogin(() => undefined);
+  }
 
   let selectLogin: SelectLogin = (id) => {
+    console.log("select login ", id)
     setSelectedLogin(() => logins.find(login => login.id === id));
   }
 
@@ -113,7 +117,7 @@ export default function App() {
         <div className='btn'>
           <img src={addIcon} alt="Add" className='icon' />
         </div>
-        <div className='btn'>
+        <div className='btn' onClick={() => selectedLogin && deleteLogin(selectedLogin.id)} >
           <img src={trashIcon} alt="Delete" className='icon' />
         </div>
       </div>
@@ -128,8 +132,7 @@ export default function App() {
         </div>
         <div className='seperator'>
         </div>
-        <div className='details'>
-        </div>
+        <LoginDetails login={selectedLogin} />
       </div>
     </>
   );
