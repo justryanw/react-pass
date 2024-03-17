@@ -1,6 +1,6 @@
 import { Login, SelectLogin } from "./App";
 
-interface ILoginItem { 
+interface ILoginItem {
     login: Login,
     selectLogin: SelectLogin
     selected: boolean
@@ -8,9 +8,7 @@ interface ILoginItem {
 
 export function LoginItem({ login, selectLogin, selected }: ILoginItem) {
     const { id, fields } = login;
-    const title = fields.get("Title");
-    const username = fields.get("Username");
-    const url = fields.get("Url");
+    const { Title, Username, Url } = fields;
 
     let getFavicon = (url: string, size = 256) => {
         return `https://www.google.com/s2/favicons?sz=${size}&domain_url=${url}`;
@@ -18,10 +16,10 @@ export function LoginItem({ login, selectLogin, selected }: ILoginItem) {
 
     return (
         <li className={`login ${selected ? 'selected' : ''}`} onClick={() => selectLogin(id)}>
-            {url && <img className='favicon' src={getFavicon(url)}></img>}
+            <img className='favicon' src={getFavicon(Url)}></img>
             <div>
-                {title && <div className="title">{title}</div>}
-                {username &&<div className="username">{username}</div>}
+                <div className="title">{Title}</div>
+                <div className="username">{Username}</div>
             </div>
         </li>
     );

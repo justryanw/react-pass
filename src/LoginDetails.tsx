@@ -1,40 +1,50 @@
 import { LoginField, BorderType } from "./LoginField";
-import { Login } from "./App";
-import { useState } from "react";
+import { Login, OnSubmit } from "./App";
+import { FormEvent, useState } from "react";
 
 interface ILoginDetails {
-  login: Login
+  login: Login,
+  onSubmit: OnSubmit
 }
 
 export type OnLoginFieldChange = (key: string, value: string) => void;
 
-export function LoginDetails({ login }: ILoginDetails) {
+export function LoginDetails({ login, onSubmit }: ILoginDetails) {
   const [newLogin, setNewLogin] = useState(login);
 
   const onChange: OnLoginFieldChange = (key, value) => {
-    setNewLogin(({id, fields}) => {
+    setNewLogin(({ id, fields }) => {
+      let newFields = { ...fields };
+      newFields[key] = value;
+
       return {
         id,
-        fields: fields.set(key, value)
+        fields: newFields
       };
     });
   }
 
-  const handleSubmit = () => {
-    /// grab stuff the fields
+  const handleSubmit = (e: FormEvent) => {
+    console.log("submit");
+    e.preventDefault();
+
+
+    onSubmit(newLogin);
   };
 
   return (
     <form onSubmit={handleSubmit} className="login-details">
       {
-        Array.from(newLogin.fields.entries()).map(([key, value], index, arr) => {
-          return <LoginField
-            key={key}
-            name={key}
-            value={value}
-            borderType={index === 0 ? BorderType.Top : index === arr.length - 1 ? BorderType.Bottom : BorderType.Middle}
-            onChange={onChange}
-          />
+        Object.entries(newLogin.fields).map(([key, value], index, arr) => {
+          if (typeof value === 'string') {
+            return <LoginField
+              key={key}
+              name={key}
+              value={value}
+              borderType={index === 0 ? BorderType.Top : index === arr.length - 1 ? BorderType.Bottom : BorderType.Middle}
+              onChange={onChange}
+            />
+          }
         })
       }
     </form>

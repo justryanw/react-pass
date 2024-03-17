@@ -8,38 +8,53 @@ import { LoginDetails } from './LoginDetails';
 export type DeleteLogin = (id: string) => void;
 export type SelectLogin = (id: string) => void;
 export type NewLogin = () => void;
+export type OnSubmit = (login: Login) => void;
 
 export interface Login {
   id: string,
-  fields: Map<string, string>
+  fields: FieldMap
+}
+
+export interface CustomFieldType {
+  customData: string;
+}
+
+export type Field = string | CustomFieldType;
+
+export interface FieldMap {
+  [fieldName: string]: Field,
+  Title: string,
+  Username: string,
+  Password: string,
+  Url: string
 }
 
 export default function App() {
   const [logins, setLogins] = useState<Login[]>([
     {
       id: crypto.randomUUID(),
-      fields: new Map<string, string>([
-        ["Title", "Google"],
-        ["Username", "someone@gmail.com"],
-        ["Password", ""],
-        ["Url", "https://google.com"],
-      ])
+      fields: {
+        Title: "Google",
+        Username: "someone@gmail.com",
+        Password: "",
+        Url: "https://google.com"
+      }
     }, {
       id: crypto.randomUUID(),
-      fields: new Map<string, string>([
-        ["Title", "Facebook"],
-        ["Username", "someone@gmail.com"],
-        ["Password", ""],
-        ["Url", "https://facebook.com"],
-      ])
+      fields: {
+        Title: "Facebook",
+        Username: "someone@gmail.com",
+        Password: "",
+        Url: "https://facebook.com",
+      }
     }, {
       id: crypto.randomUUID(),
-      fields: new Map<string, string>([
-        ["Title", "Amazon"],
-        ["Username", "someone@gmail.com"],
-        ["Password", ""],
-        ["Url", "https://amazon.com"],
-      ])
+      fields: {
+        Title: "Amazon",
+        Username: "someone@gmail.com",
+        Password: "",
+        Url: "https://amazon.com",
+      }
     }
   ]);
 
@@ -56,16 +71,23 @@ export default function App() {
   const newLogin: NewLogin = () => {
     const newLogin = {
       id: crypto.randomUUID(),
-      fields: new Map<string, string>([
-        ["Title", ""],
-        ["Username", ""],
-        ["Password", ""],
-        ["Url", ""],
-      ])
+      fields: {
+        Title: "",
+        Username: "",
+        Password: "",
+        Url: "",
+      }
     };
 
     setLogins((currentLogins) => [...currentLogins, newLogin]);
     setSelectedLogin(newLogin);
+  }
+
+  const setLogin: OnSubmit = (login: Login) => {
+    console.log("submit");
+    setLogins(currentLogins => {
+      return [...currentLogins.filter(({id}) => id !== login.id), login]
+    });
   }
 
   const selectLogin: SelectLogin = (id) => {
@@ -92,7 +114,10 @@ export default function App() {
           </ul>
         </div>
         <div className='seperator' />
-        {selectedLogin ? <LoginDetails login={selectedLogin} key={selectedLogin.id} /> : "no login selected"}
+        {
+          selectedLogin ? <LoginDetails login={selectedLogin} key={selectedLogin.id} onSubmit={setLogin} /> :
+            <div className='empty-page'>No Logins</div>
+        }
       </div>
     </>
   );

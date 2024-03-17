@@ -161,3 +161,7 @@ div#root {
     outline: none;
     color: #fff;
 }
+
+.empty-page {
+    margin: auto;
+}
