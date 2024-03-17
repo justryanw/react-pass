@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './style.css';
 import addIcon from './assets/add.svg';
 import trashIcon from './assets/trash.svg';
@@ -8,7 +8,7 @@ export type DeleteLogin = (id: string) => void;
 export type SelectLogin = (id: string) => void;
 
 export default function App() {
-  const [logins, setLogins] = useState([
+  const [logins] = useState([
     {
       id: crypto.randomUUID(),
       title: "Google",
@@ -39,9 +39,9 @@ export default function App() {
 
   const [selectedLogin, setSelectedLogin] = useState(logins[0] as Login | undefined);
 
-  let deleteLogin: DeleteLogin = (id) => {
-    setLogins((currentLogins) => currentLogins.filter(login => login.id !== id));
-  }
+  // let deleteLogin: DeleteLogin = (id) => {
+  //   setLogins((currentLogins) => currentLogins.filter(login => login.id !== id));
+  // }
 
   let selectLogin: SelectLogin = (id) => {
     setSelectedLogin(() => logins.find(login => login.id === id));
